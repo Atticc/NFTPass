@@ -1,13 +1,11 @@
-Mercury/
-Mercury.modules
-*.mh
-*.err
-*.init
-*.dll
-*.exe
-*.a
-*.so
-*.dylib
-*.beams
-*.d
-*.c_date
+node_modules
+.env
+coverage
+coverage.json
+typechain
+typechain-types
+
+#Hardhat files
+cache
+artifacts
+build
