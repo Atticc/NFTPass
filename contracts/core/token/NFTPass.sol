@@ -28,7 +28,7 @@ contract NFTPass is ERC721A, Ownable {
 
     enum NFTPassType { ERC721, ERC1155, ERC721A }
     // baseURI for the token metadata
-    string private metadataURI;
+    string public metadataURI;
     // whitelist for early adopter passes
     mapping(address => bool) public eapWhitelist ;
     uint256 public price = 0 ether;
@@ -47,6 +47,10 @@ contract NFTPass is ERC721A, Ownable {
      */
     function _baseURI() internal view virtual override returns (string memory) {
         return metadataURI;
+    }
+
+    function _startTokenId() internal view virtual override returns (uint256) {
+        return 1;
     }
 
     function checkNFTWhitelist(address nftAddress) public view returns (bool) {
